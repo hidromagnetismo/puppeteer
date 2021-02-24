@@ -9,6 +9,7 @@ Web scrapping in nodejs with puppeteer
 
 ```bash
 git clone https://github.com/hidromagnetismo/puppeteer.git && cd puppeteer && npm i && npm i --only=dev
+npm i puppeteer
 ```
 
 ### Running
