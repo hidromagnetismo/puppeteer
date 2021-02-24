@@ -11,16 +11,8 @@ function delay(time) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    await page.goto('http://127.0.0.1/phpmyadmin/');
-    await delay(5);
-    await page.screenshot({path: 'phpmyadmin.jpg'});
-
-    await page.goto('http://rutas4wd.com', {
-        waitUntil: 'load',
-        timeout: 0
-    });
-    await delay(10);
-    await page.screenshot({path: 'rutas4wd.jpg'});
+    await page.goto('http://amazon.com');
+    await page.screenshot({path: 'amazon.jpg'});
 
     await browser.close();
 })();
