@@ -1,5 +1,7 @@
 
 const puppeteer = require('puppeteer');
+require('./connection');
+const HelpTopic = require('./models/HelpTopic');
 
 ( async () => {
     
@@ -95,6 +97,16 @@ const puppeteer = require('puppeteer');
         await nextPage();
         await page.waitForNavigation();
     
+        // Remove all documents of collection: {use puppeteer_phpMyAdmin;} and {db.helptopics.remove({});}
+        for (let item of tmp) {
+            const helpTopicOne = new HelpTopic({
+                name: item.name,
+                description: item.description,
+            });
+            let helpTopic = await helpTopicOne.save();
+            console.log(helpTopic);
+        }
+
     }
 
 
